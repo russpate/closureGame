@@ -8,25 +8,43 @@ function Character(options){
   this.name = options.name || "hipster";
   this.speed = options.speed || 5;
   this.energy = options.energy || 100;
-  this.ride = function(){
-    this.bike = bikes[Math.floor(Math.random()*4)];
-    // this.environment = environments[Math.floor(Math.random()*4)];
-    console.log("the", this.name,"is going to be riding a",this.bike.name, "\n\nGreat job looks like your ready to race!\n\nNow that you've got your character and your bike let's give our character a new instruction. This time type in your character's name and .race() *Like this: oldLady.race() **\n\nOnce you've done that someone will be selected to race against you.\n\nIf you've got everything typed in and your ready to go just click enter!");
-  };
-  this.race = function(){
-    var racer = randomizer(characters);
-    var terrain = randomizer(environments);
-    // racer.ride();
-    var racerBike = randomizer(bikes);
-    console.log(`it looks like ${this.name} on a ${this.bike.name} will be racing against ${racer.name} on a ${racerBike.name} on the ${terrain.type}`);
+  // this.ride = function(){
+  //   this.bike = bikes[Math.floor(Math.random()*4)];
+  //   // this.environment = environments[Math.floor(Math.random()*4)];
+  //   console.log("the", this.name,"is going to be riding a",this.bike.name, "\n\nGreat job looks like your ready to race!\n\nNow that you've got your character and your bike let's give our character a new instruction. This time type in your character's name and .race() *Like this: oldLady.race() **\n\nOnce you've done that someone will be selected to race against you.\n\nIf you've got everything typed in and your ready to go just click enter!");
+  // };
+  // this.race = function(){
+  //   var racer = randomizer(characters);
+  //   var terrain = randomizer(environments);
+  //   // racer.ride();
+  //   var racerBike = randomizer(bikes);
+  //   console.log(`it looks like ${this.name} on a ${this.bike.name} will be racing against ${racer.name} on a ${racerBike.name} on the ${terrain.type}`);
+  //
+  //   if (this.bike.weight + this.speed + this.energy > racerBike.weight + racer.speed + racer.energy){
+  //     return this.name + " wins the race";
+  //   } else {
+  //     return racer.name + " wins the race";
+  //   }
+  //
+  // };
+};
+Character.prototype.ride = function(){
+  this.bike = bikes[Math.floor(Math.random()*4)];
+  // this.environment = environments[Math.floor(Math.random()*4)];
+  console.log("the", this.name,"is going to be riding a",this.bike.name, "\n\nGreat job looks like your ready to race!\n\nNow that you've got your character and your bike let's give our character a new instruction. This time type in your character's name and .race() *Like this: oldLady.race() **\n\nOnce you've done that someone will be selected to race against you.\n\nIf you've got everything typed in and your ready to go just click enter!");
+}
+Character.prototype.race = function(){
+  var racer = randomizer(characters);
+  var terrain = randomizer(environments);
+  // racer.ride();
+  var racerBike = randomizer(bikes);
+  console.log(`it looks like ${this.name} on a ${this.bike.name} will be racing against ${racer.name} on a ${racerBike.name} on the ${terrain.type}`);
 
-    if (this.bike.weight + this.speed + this.energy > racerBike.weight + racer.speed + racer.energy){
-      return this.name + " wins the race";
-    } else {
-      return racer.name + " wins the race";
-    }
-
-  };
+  if (this.bike.weight + this.speed + this.energy > racerBike.weight + racer.speed + racer.energy){
+    return this.name + " wins the race";
+  } else {
+    return racer.name + " wins the race";
+  }
 };
 function Bike(options){
   var options = options || {};
