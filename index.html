@@ -3,24 +3,55 @@
   <head>
     <meta charset="utf-8">
     <title>Closure Game</title>
+    <link rel="stylesheet" href="css/main.css">
   </head>
   <body>
     <div class="container">
-      <section class="welcome active">
+      <section id="welcome" class="active">
         <h1>Welcome to Pedalton!</h1>
+        <form>
+          <h3>Hello there and welcome! Here in Pedalton we love to race bikes. If  you want in on the action, click 'Get Started' to choose your character.</h3>
+          <button name"next">Get Started</button>
+        </form>
       </section>
-      <section class="characters">
+      <section id="characters">
+        <h1>Characters</h1>
+        <h3>Awesome, The first thing we need to do is choose your character. Here in Pedalton we like to keep things spicy and randomly select a bike for you. To get your bike just click 'Let's Ride!</h3>
+        <form id="char-form">
+          <select id="char-select">
+            <option name="no-selected" value="" disabled selected>Select a Character</option>
+            <option value="oldLady" data-name="oldLady">Old Lady</option>
+            <option value="littleKid" data-name="littleKid">Little Kid</option>
+            <option value="pro" data-name="pro">Pro</option>
+            <option value="hipster" data-name="hipster">Hipster</option>
+          </select>
+          <button id="char-select-submit" type="submit" disabled='disabled'>Let's Ride!</button>
+        </form>
       </section>
-      <section class="ride">
+      <section id="ride">
+        <h1>Ride</h1>
+        <form>
+          <button name"next">See Opponent</button>
+        </form>
       </section>
-      <section class="race">
+      <section id="race">
+        <h1>Race</h1>
+        <form action="index.html">
+          <button name"next">Go!</button>
+        </form>
       </section>
-      <section class="conclusion">
+      <section id="results">
+        <h1>Results</h1>
+        <form action="index.html">
+          <button name"next">Play Again</button>
+        </form>
       </section>
     </div>
     <script type="text/javascript" src="bower_components/underscore/underscore.js"></script>
     <script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
-    <script src="classDemo.js" charset="utf-8"></script>
-    <script src="app.js" charset="utf-8"></script>
+    <script src="js/classDemo.js" charset="utf-8"></script>
+    <script src="js/template.js" charset="utf-8"></script>
+    <script src="js/events.js" charset="utf-8"></script>
+    <script src="js/app.js" charset="utf-8"></script>
   </body>
 </html>

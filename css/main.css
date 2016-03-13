@@ -1,0 +1,19 @@
+body {
+  background-color: indianred; }
+
+section {
+  display: none;
+  width: 100%; }
+
+.active {
+  display: inline-block; }
+
+.container {
+  width: 50%;
+  margin: 0 auto; }
+
+h1 {
+  text-align: center; }
+
+form {
+  text-align: center; }
