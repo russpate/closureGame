@@ -1,0 +1,22 @@
+select#char-select {
+    width: 100%;
+    -webkit-appearance: none;
+    border: none;
+    padding: 30px;
+    border-radius: 0;
+    background: #E2E2E2;
+    font-size: 18px;
+    color: #4040EF;
+    cursor: pointer;
+}
+
+select#char-select:hover {
+    background: white;
+}
+select#char-select:focus {
+  outline: none;
+  border: 1px dashed;
+}
+button#char-select-submit:disabled {
+    color: #2727A9;
+}

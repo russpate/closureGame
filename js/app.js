@@ -3,11 +3,11 @@
   this.name = options.name || "hipster";
   this.speed = options.speed || 5;
   this.energy = options.energy || 100;
+  this.img = options.img || "img/default.jpg"
 };
 
 Character.prototype.ride = function(){
-  this.bike = bikes[Math.floor(Math.random()*4)];
-  console.log("the", this.name,"is going to be riding a",this.bike.name, "\n\nGreat job looks like your ready to race!\n\nNow that you've got your character and your bike let's give our character a new instruction. This time type in your character's name and .race() *Like this: oldLady.race() **\n\nOnce you've done that someone will be selected to race against you.\n\nIf you've got everything typed in and your ready to go just click enter!");
+  this.bike = randomizer(bikes)
 };
 
 Character.prototype.race = function(){
@@ -15,18 +15,33 @@ Character.prototype.race = function(){
   var terrain = randomizer(environments);
   var racerBike = randomizer(bikes);
   console.log(`it looks like ${this.name} on a ${this.bike.name} will be racing against ${racer.name} on a ${racerBike.name} on the ${terrain.type}`);
-  if (this.bike.weight + this.speed + this.energy > racerBike.weight + racer.speed + racer.energy){
-    return this.name + " wins the race";
-  } else {
-    return racer.name + " wins the race";
-  }
+  // if (this.bike.weight + this.speed + this.energy > racerBike.weight + racer.speed + racer.energy){
+  //   return this.name + " wins the race";
+  // } else {
+  //   return racer.name + " wins the race";
+  // }
 };
+
+Character.prototype.racer = function(){
+  return randomizer(characters)
+};
+Character.prototype.racerBike = function(){
+  return randomizer(bikes)
+};
+Character.prototype.go = function(){
+  if (page.charChoice().bike.weight + page.charChoice().speed + page.charChoice().energy > Character.prototype.racerBike().weight + Character.prototype.racer().speed + Character.prototype.racer().energy){
+    return page.charChoice().name + " wins the race";
+  } else {
+    return Character.prototype.racer().name + " wins the race";
+  }
+}
 
 function Bike(options){
   var options = options || {};
   this.name = options.name || "Beach Cruiser";
   this.weight = options.weight || 20;
   this.adaptability = options.adaptability || "medium";
+  this.img = options.img || "img/default.jpg"
 };
 
 function Environment(options){
@@ -36,10 +51,10 @@ function Environment(options){
 };
 
 // Characters
-var oldLady = new Character({name: "old Lady", speed: 100, energy: 20});
-var pro = new Character({name: "pro", speed: 60, energy: 60});
-var hipster = new Character({name: "hipster", speed: 40, energy: 50});
-var littleKid = new Character({name: "littleKid", speed: 15, energy: 100});
+var oldLady = new Character({name: "old Lady", speed: 100, energy: 20, img:"img/oldLady.jpg"});
+var pro = new Character({name: "pro", speed: 60, energy: 60, img:"img/pro.jpg"});
+var hipster = new Character({name: "hipster", speed: 40, energy: 50, img:"img/hipster.jpg"});
+var littleKid = new Character({name: "littleKid", speed: 15, energy: 100, img:"img/littleKid.jpg"});
 var characters = [oldLady,pro,hipster,littleKid];
 var randomizer = function(param){
   var result = param[Math.floor(Math.random()*param.length)];
@@ -47,10 +62,10 @@ var randomizer = function(param){
 };
 
 // Bikes
-var trackBike = new Bike({name: "track bike", weight: 5, adaptability: "low"});
-var hybrid = new Bike({name: "hybrid", weight: 10, adaptability: "high"});
-var mountain = new Bike({name: "mountain bike", weight: 1, adaptability: "low"});
-var road = new Bike({name: "road bike", weight: 9, adaptability: "moderate"});
+var trackBike = new Bike({name: "track bike", weight: 5, adaptability: "low", img: "img/trackBike.jpg"});
+var hybrid = new Bike({name: "hybrid", weight: 10, adaptability: "high", img: "img/hybrid.jpg"});
+var mountain = new Bike({name: "mountain bike", weight: 1, adaptability: "low", img: "img/mountainBike.jpg"});
+var road = new Bike({name: "road bike", weight: 9, adaptability: "moderate", img: "img/roadBike.jpg"});
 var bikes = [trackBike,hybrid,mountain,road];
 
 // Environments

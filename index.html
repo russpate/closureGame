@@ -3,12 +3,15 @@
   <head>
     <meta charset="utf-8">
     <title>Closure Game</title>
-    <link rel="stylesheet" href="css/main.css">
+  <link href='https://fonts.googleapis.com/css?family=Noto+Sans:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="css/main.css">
   </head>
   <body>
     <div class="container">
       <section id="welcome" class="active">
-        <h1>Welcome to Pedalton!</h1>
+        <div class="logoWrap">
+          <img class="logo" src="img/Welcome.png">
+        </div>
         <form>
           <h3>Hello there and welcome! Here in Pedalton we love to race bikes. If  you want in on the action, click 'Get Started' to choose your character.</h3>
           <button name"next">Get Started</button>
@@ -29,23 +32,24 @@
         </form>
       </section>
       <section id="ride">
-        <h1>Ride</h1>
+        <h1>Getting your ride</h1>
+        <div class="ride-content">
+        </div>
         <form>
-          <button name"next">See Opponent</button>
+          <button name="next">See Opponent</button>
         </form>
       </section>
       <section id="race">
-        <h1>Race</h1>
-        <form action="index.html">
-          <button name"next">Go!</button>
-        </form>
+        <div class="opponent-content">
+        </div>
+        <div class="race-content">
+          <form>
+            <button name="next">Go!</button>
+          </form>
+
+        </div>
       </section>
-      <section id="results">
-        <h1>Results</h1>
-        <form action="index.html">
-          <button name"next">Play Again</button>
-        </form>
-      </section>
+
     </div>
     <script type="text/javascript" src="bower_components/underscore/underscore.js"></script>
     <script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>

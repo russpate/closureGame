@@ -1,5 +1,12 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
 body{
-  background-color:indianred;
+  background-color:#efefef;
+  color:#4040EF;
+  font-family: 'Noto Sans', sans-serif;
 }
 section{
   display:none;
@@ -14,6 +21,12 @@ section{
 }
 h1{
   text-align:center;
+  margin:5% 0;
+}
+h3{
+  text-align:center;
+  font-size:1.25em;
+  margin:5% 0;
 }
 form{
   text-align:center;

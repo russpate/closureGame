@@ -1,0 +1,23 @@
+.logoWrap{
+  width:30%;
+  margin:0 auto;
+}
+.logo{
+  width:100%;
+}
+button {
+  -webkit-appearance: none;
+  background: #4040EF;
+  border: none;
+  padding: 30px;
+  font-size: 17px;
+  font-weight: 600;
+  transition: .2s all;
+  color: white;
+  margin: 10% 0;
+  width:100%;
+}
+button:hover {
+  background-color: #5C5CFF;
+  color: white;
+}
