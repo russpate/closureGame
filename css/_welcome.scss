@@ -7,7 +7,7 @@
 }
 button {
   -webkit-appearance: none;
-  background: #4040EF;
+  background: #44EA9F;
   border: none;
   padding: 30px;
   font-size: 17px;
@@ -16,8 +16,9 @@ button {
   color: white;
   margin: 10% 0;
   width:100%;
+  cursor:pointer;
 }
 button:hover {
-  background-color: #5C5CFF;
+  background-color: #4040EF;
   color: white;
 }

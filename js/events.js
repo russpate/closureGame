@@ -1,7 +1,8 @@
 $(document).ready(function() {
   page.init();
 });
-
+var opponent = "";
+var opponentBike = "";
 var page = {
 
   init: function () {
@@ -19,8 +20,8 @@ var page = {
     // $('#char-form').on('change', page.toCharSelect);
     $('#char-select').on('change', page.toCharSelect);
     $('#ride').on('submit', page.toRace);
-    $('#race').on('submit', page.toResults);
-    $('#race-content').on('submit', page.toBeginning);
+    $('#btnGo').on('click', page.toResults);
+    $('#playAgain').on('click', page.toBeginning);
   },
 
   toCharacters: function(){
@@ -67,7 +68,6 @@ var page = {
   // opponentBike: function(){
   //   return randomizer(bikes);
   // },
-
   toRace: function(){
     event.preventDefault();
     $(this).removeClass('active');
@@ -81,7 +81,13 @@ var page = {
       + "<div class='playerAvatar'><img src='"
       + opponent.img
       + "'></div>"
-      +"<h3>ALRIGHT! Nothing beats a little healthy competition!<br /> You will be going head to head against "
+      + "<p class='vs'>vs</p>"
+      + "<div class='playerAvatar'><img src='"
+      + page.charChoice().img
+      + "'></div>"
+      +"<h3>Nothing beats a little healthy competition!<br /> You will be riding as "
+      + page.charChoice().name
+      +" going head to head against "
       + opponent.name
       + " riding on a "
       + opponentBike.name
@@ -96,21 +102,25 @@ var page = {
 
   toResults: function(){
     event.preventDefault();
-    // if (this.bike.weight + this.speed + this.energy > racerBike.weight + racer.speed + racer.energy){
-    //   return this.name + " wins the race";
-    // } else {
-    //   return racer.name + " wins the race";
-    // }
-    return $('.race-content').html(
-      "<h3>YOU WIN</h3>"
-      + "<p>you did it, you finished your first bike race!"
-      + "<button id='playAgain' name='Play Again'>Play Again</button>")
+      console.log("click");
+    if (page.charChoice().weight + page.charChoice().speed + page.charChoice().energy > opponentBike.weight + opponent.speed + opponent.energy){
+      return $('#race').html(
+        "<h3>YOU WIN</h3>"
+        + "<p>you did it, you finished your first bike race!"
+        + "<button id='playAgain' name='Play Again'>Play Again</button>")
+    } else if (page.charChoice().weight + page.charChoice().speed + page.charChoice().energy < opponentBike.weight + opponent.speed + opponent.energy) {
+      return $('#race').html(
+        "<h3>YOU LOSE GOOD DAY SIR!</h3>"
+        + "<button id='playAgain' name='Play Again'>Try Again</button>")
+    } else {
+      return $('#race').html("<h3>ITS A TIE</h3>" + "<button id='playAgain' name='Play Again'>Try Again</button>");
+    };
   },
 
   toBeginning: function(){
     event.preventDefault();
     console.log('clicked')
-    $(this).parent().removeClass('active');
+    $('section').closest().removeClass('active');
     $('#welcome').addClass('active');
   }
 }; // end page

@@ -51,10 +51,10 @@ function Environment(options){
 };
 
 // Characters
-var oldLady = new Character({name: "old Lady", speed: 100, energy: 20, img:"img/oldLady.jpg"});
-var pro = new Character({name: "pro", speed: 60, energy: 60, img:"img/pro.jpg"});
-var hipster = new Character({name: "hipster", speed: 40, energy: 50, img:"img/hipster.jpg"});
-var littleKid = new Character({name: "littleKid", speed: 15, energy: 100, img:"img/littleKid.jpg"});
+var oldLady = new Character({name: "old Lady", speed: 100, energy: 20, img:"img/oldLady.png"});
+var pro = new Character({name: "pro", speed: 60, energy: 60, img:"img/pro.png"});
+var hipster = new Character({name: "hipster", speed: 40, energy: 50, img:"img/hipster.png"});
+var littleKid = new Character({name: "littleKid", speed: 15, energy: 100, img:"img/littleKid.png"});
 var characters = [oldLady,pro,hipster,littleKid];
 var randomizer = function(param){
   var result = param[Math.floor(Math.random()*param.length)];

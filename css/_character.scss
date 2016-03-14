@@ -17,6 +17,9 @@ select#char-select:focus {
   outline: none;
   border: 1px dashed;
 }
+button#char-select-submit:hover {
+    color: #fff;
+}
 button#char-select-submit:disabled {
-    color: #2727A9;
+    color: rgba(0,0,0,0.5);
 }

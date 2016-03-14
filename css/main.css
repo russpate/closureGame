@@ -25,6 +25,12 @@ select#char-select:focus {
   outline: none;
   border: 1px dashed; }
 
+button#char-select-submit:hover {
+  color: #fff; }
+
+button#char-select-submit:disabled {
+  color: rgba(0, 0, 0, 0.5); }
+
 .charFeature {
   width: 50%;
   display: inline-block;
@@ -38,8 +44,15 @@ select#char-select:focus {
   border-radius: 100%; }
 
 .playerAvatar {
-  width: 20%;
-  margin: 0 auto; }
+  width: 33%;
+  margin: 0 auto;
+  display: inline-block;
+  vertical-align: middle; }
+
+.vs {
+  width: 33%;
+  display: inline-block;
+  text-align: center; }
 
 * {
   margin: 0;
@@ -83,7 +96,7 @@ form {
 
 button {
   -webkit-appearance: none;
-  background: #4040EF;
+  background: #44EA9F;
   border: none;
   padding: 30px;
   font-size: 17px;
@@ -91,8 +104,9 @@ button {
   transition: .2s all;
   color: white;
   margin: 10% 0;
-  width: 100%; }
+  width: 100%;
+  cursor: pointer; }
 
 button:hover {
-  background-color: #5C5CFF;
+  background-color: #4040EF;
   color: white; }
